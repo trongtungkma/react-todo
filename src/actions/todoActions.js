@@ -1,7 +1,10 @@
 export const createAddTodo = (text) => {
     return {
         type: 'ADD_TODO',
-        text
+        payload: {
+            key: Date.now(),
+            text
+        }
     }
 }
 

@@ -5,11 +5,10 @@ import { createAddTodo, createInitAction } from '../actions/todoActions'
 export const reducer = (prevState = createInitialState(), action) => {
     switch (action.type) {
         case 'ADD_TODO':
-            console.log('[DEBUG]')
             const nextState = {
                 todoList: [
                     ...prevState.todoList,
-                    action.text,
+                    action.payload,
                 ],
             };
 
