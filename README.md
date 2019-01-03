@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Based on the master branch, we made some refactor and make code more simple with React way
+
 ## Available Scripts
 
 In the project directory, you can run:
