@@ -1,22 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import ToDoItem from './TodoItem'
 
 const TodoList = ({ tasks }) => {
-
-  const createTasks = item => {
-    return (
-      <li key={item.key}>
-        {item.text}
-      </li>
-    )
-  }
-
-  const listTasks = tasks.map(createTasks)
-
   return (
       <ul className="theList">
-        {listTasks}
+        {
+          tasks.map(({key, text}) =>
+              <ToDoItem key={key} text={text}/>
+          )
+        }
       </ul>
   )
+}
+
+TodoList.propTypes = {
+  tasks: PropTypes.arrayOf(
+    PropTypes.shape({
+        key: PropTypes.number.isRequired,
+        text: PropTypes.string.isRequired
+    })
+  ).isRequired
 }
 
 export default TodoList
