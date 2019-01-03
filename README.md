@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It's a simple ToDo app, used for a React Tutorial in this link:
+
+https://medium.com/andy-le/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-x%C3%A2y-d%E1%BB%B1ng-%E1%BB%A9ng-d%E1%BB%A5ng-todo-v%E1%BB%9Bi-react-4f5376e4be2c
+
 ## Available Scripts
 
 In the project directory, you can run:
