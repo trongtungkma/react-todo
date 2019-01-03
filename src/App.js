@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
+import TodoForm from './TodoForm'
 import TodoList from './TodoList'
-import TodoItems from './TodoItems'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-        items: []
+        tasks: []
     }
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
       if (taskName !== null && taskName !== '') {
           this.setState(state =>  {
               return {
-                  items: [...state.items, newTask]
+                  tasks: [...state.tasks, newTask]
               }
           })
       }
@@ -28,8 +28,8 @@ class App extends Component {
   render() {
     return (
         <div>
-          <TodoList addItem={this.addItem} />
-          <TodoItems entries={this.state.items} />
+          <TodoForm addItem={this.addItem} />
+          <TodoList tasks={this.state.tasks} />
         </div>
     )
   }
