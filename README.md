@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Based on the enhancement branch, we are going to write a simple state manegement like Redux. Finally, we will switch to Redux to use utilize Redux features.
+
 ## Available Scripts
 
 In the project directory, you can run:
