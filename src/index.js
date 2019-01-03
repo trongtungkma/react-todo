@@ -1,10 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { testStore } from './reducers/todoReducer'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
+import createStore from './utils/createStore'
+import { reducer } from './reducers/todoReducer'
+import { createInitialState } from './utils/createInitialState'
 
-// verify our store, check output in your console
-testStore()
-ReactDOM.render(<App />, document.getElementById('root'));
+const store = createStore(reducer, createInitialState())
+ReactDOM.render(<App store={store} />, document.getElementById('root'));
 

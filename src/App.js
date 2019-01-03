@@ -26,9 +26,10 @@ class App extends Component {
 
 
   render() {
+    const { ...other } = this.props;
     return (
         <div>
-          <TodoForm addItem={this.addItem} />
+          <TodoForm addItem={this.addItem} {...other} />
           <TodoList tasks={this.state.tasks} />
         </div>
     )
