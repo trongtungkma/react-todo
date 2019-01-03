@@ -3,11 +3,14 @@ import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props)
     this.state = {
         tasks: []
     }
+
+    const { store } = props
+    store.subscribe(this.subscribeStore)
   }
 
    addItem = (taskName) => {
@@ -25,17 +28,21 @@ class App extends Component {
   }
 
   subscribeStore = () => {
-      console.log('get inform from store')
+      this.setState(state => {
+          const newState = this.props.store.getState()
+          const { todoList } = newState;
+          return {
+              tasks: todoList
+          }
+      })
   }
 
 
   render() {
-    const { store } = this.props
-    store.subscribe(this.subscribeStore)
-
+    const { ...other } = this.props
     return (
         <div>
-          <TodoForm addItem={this.addItem} store={store} />
+          <TodoForm {...other} />
           <TodoList tasks={this.state.tasks} />
         </div>
     )

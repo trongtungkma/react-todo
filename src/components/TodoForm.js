@@ -6,8 +6,7 @@ class TodoForm extends Component {
     handleInput = e => {
         e.preventDefault()
         const taskName = this.refs.taskInput.value;
-        this.props.addItem(taskName);
-
+        
         // dispatch an action to my redux
         this.props.store.dispatch(
             createAddTodo(taskName)
