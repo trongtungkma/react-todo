@@ -24,12 +24,18 @@ class App extends Component {
       }
   }
 
+  subscribeStore = () => {
+      console.log('get inform from store')
+  }
+
 
   render() {
-    const { ...other } = this.props;
+    const { store } = this.props
+    store.subscribe(this.subscribeStore)
+
     return (
         <div>
-          <TodoForm addItem={this.addItem} {...other} />
+          <TodoForm addItem={this.addItem} store={store} />
           <TodoList tasks={this.state.tasks} />
         </div>
     )

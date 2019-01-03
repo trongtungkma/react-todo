@@ -9,11 +9,9 @@ class TodoForm extends Component {
         this.props.addItem(taskName);
 
         // dispatch an action to my redux
-        console.log(JSON.stringify(this.props.store.getState()))
         this.props.store.dispatch(
             createAddTodo(taskName)
         )
-        console.log(JSON.stringify(this.props.store.getState()))
 
         // reset and focus again on input form
         this.refs.taskInput.value = ''
