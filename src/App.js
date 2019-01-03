@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import TodoForm from './TodoForm'
-import TodoList from './TodoList'
+import TodoForm from './components/TodoForm'
+import TodoList from './components/TodoList'
 
 class App extends Component {
   constructor() {
