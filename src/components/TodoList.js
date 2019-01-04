@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import ToDoItem from './TodoItem'
+import styles from './TodoList.module.css'
 
 const TodoList = ({ tasks }) => {
   return (
-      <ul className="theList">
+      <ul className={styles.theList}>
         {
           tasks.map(({key, text}) =>
               <ToDoItem key={key} text={text}/>

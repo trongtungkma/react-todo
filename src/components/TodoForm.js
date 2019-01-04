@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import styles from './TodoForm.module.css'
 
 class TodoForm extends Component {
 
@@ -17,14 +18,19 @@ class TodoForm extends Component {
     render() {
 
         return (
-            <div className="todoListMain">
-                <div className="header">
+            <div>
+                <div>
                     <form onSubmit={this.handleInput}>
                         <input
+                            className={styles.formInput}
                             placeholder="Task"
                             ref="taskInput"
                         />
-                        <button type="submit"> Add Task </button>
+                        <button
+                            className={styles.formButton}
+                            type="submit">
+                            Add Task
+                        </button>
                     </form>
                 </div>
             </div>
