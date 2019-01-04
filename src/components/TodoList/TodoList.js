@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ToDoItem from './TodoItem'
+import {TodoItem} from '../TodoItem'
 import styles from './TodoList.module.css'
 
 const TodoList = ({ tasks }) => {
@@ -9,7 +9,7 @@ const TodoList = ({ tasks }) => {
       <ul className={styles.theList}>
         {
           tasks.map(({key, text}) =>
-              <ToDoItem key={key} text={text}/>
+              <TodoItem key={key} text={text}/>
           )
         }
       </ul>

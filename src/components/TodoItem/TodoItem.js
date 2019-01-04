@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './TodoItem.module.css'
 
-const ToDoItem = ({ text }) => {
+const TodoItem = ({ text }) => {
     return (
         <li className={styles.theItem}>
             {text}
@@ -11,8 +11,8 @@ const ToDoItem = ({ text }) => {
     )
 }
 
-ToDoItem.propTypes = {
+TodoItem.propTypes = {
     text: PropTypes.string.isRequired
 }
 
-export default ToDoItem
+export default TodoItem
