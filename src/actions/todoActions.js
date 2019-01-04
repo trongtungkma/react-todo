@@ -7,10 +7,3 @@ export const createAddTodo = (text) => {
         }
     }
 }
-
-export const createInitAction = () => {
-    return {
-        type: '@@INIT',
-        payload: {}
-    }
-}

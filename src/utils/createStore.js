@@ -1,3 +1,7 @@
+const ActionTypes = {
+    INIT: '@@redux/INIT'
+}
+
 const createStore = (reducer, initialState) => {
     const store = {}
     store.state = initialState
@@ -13,6 +17,13 @@ const createStore = (reducer, initialState) => {
         store.state = reducer(store.state, action)
         store.listeners.forEach(listener => listener())
     }
+
+    // When a store is created, an "INIT" action is dispatched so that every
+    // reducer returns their initial state. This effectively populates
+    // the initial state tree.
+    store.dispatch({
+        type: ActionTypes.INIT,
+    })
 
     return store
 }

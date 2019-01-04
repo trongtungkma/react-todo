@@ -1,6 +1,6 @@
 import { createInitialState } from '../utils/createInitialState'
 import createStore from '../utils/createStore'
-import { createAddTodo, createInitAction } from '../actions/todoActions'
+import { createAddTodo } from '../actions/todoActions'
 
 export const reducer = (prevState = createInitialState(), action) => {
     switch (action.type) {
@@ -22,10 +22,8 @@ export const reducer = (prevState = createInitialState(), action) => {
 export const testStore = () => {
 
     // create & init store with initial state and action
-    const initAction = createInitAction()
     const initialState = createInitialState()
     const store = createStore(reducer, initialState)
-    store.dispatch(initAction)
 
     // confirm state
     console.log(JSON.stringify(store.getState()))
