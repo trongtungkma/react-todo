@@ -1,6 +1,4 @@
 import { createInitialState } from '../utils/createInitialState'
-import createStore from '../utils/createStore'
-import { createAddTodo } from '../actions/todoActions'
 import { ADD_TODO } from '../constants/actions'
 
 export const todoReducer = (prevState = createInitialState(), action) => {

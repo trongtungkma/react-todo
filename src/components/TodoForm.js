@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { createAddTodo } from '../actions/todoActions'
 
 class TodoForm extends Component {
 
@@ -8,9 +7,7 @@ class TodoForm extends Component {
         const taskName = this.refs.taskInput.value;
         
         // dispatch an action to my redux
-        this.props.store.dispatch(
-            createAddTodo(taskName)
-        )
+        this.props.addTodo(taskName)
 
         // reset and focus again on input form
         this.refs.taskInput.value = ''

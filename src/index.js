@@ -1,11 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import createStore from './utils/createStore'
-import { todoReducer } from './reducers/todoReducer'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+import { todoReducer } from './reducers/todoReducer';
 import { createInitialState } from './utils/createInitialState'
 
+import App from './App'
+import './index.css'
+
 const store = createStore(todoReducer, createInitialState())
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
 

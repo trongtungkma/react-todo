@@ -1,52 +1,28 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
+import { createAddTodo } from './actions/todoActions'
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-        tasks: []
-    }
-
-    const { store } = props
-    store.subscribe(this.subscribeStore)
-  }
-
-   addItem = (taskName) => {
-      const newTask = {
-          text: taskName,
-          key: Date.now()
-      }
-      if (taskName !== null && taskName !== '') {
-          this.setState(state =>  {
-              return {
-                  tasks: [...state.tasks, newTask]
-              }
-          })
-      }
-  }
-
-  subscribeStore = () => {
-      this.setState(state => {
-          const newState = this.props.store.getState()
-          const { todoList } = newState;
-          return {
-              tasks: todoList
-          }
-      })
-  }
-
-
   render() {
-    const { ...other } = this.props
+    const { addTodo } = this.props
     return (
         <div>
-          <TodoForm {...other} />
-          <TodoList tasks={this.state.tasks} />
+          <TodoForm addTodo={addTodo} />
+          <TodoList tasks={this.props.tasks} />
         </div>
     )
   }
 }
 
-export default App
+const mapStateToProps = state => ({
+    tasks: state.todoList
+})
+
+const mapDispatchToProps = dispatch => ({
+    addTodo: (taskName) => dispatch(createAddTodo(taskName))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
