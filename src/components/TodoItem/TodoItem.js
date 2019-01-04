@@ -5,7 +5,7 @@ import styles from './TodoItem.module.css'
 
 const TodoItem = ({ text }) => {
     return (
-        <li className={styles.theItem}>
+        <li className={styles.taskItem}>
             {text}
         </li>
     )

@@ -6,7 +6,7 @@ import styles from './TodoList.module.css'
 
 const TodoList = ({ tasks }) => {
   return (
-      <ul className={styles.theList}>
+      <ul className={styles.tasksList}>
         {
           tasks.map(({key, text}) =>
               <TodoItem key={key} text={text}/>
