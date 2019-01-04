@@ -1,10 +1,11 @@
 import { createInitialState } from '../utils/createInitialState'
 import createStore from '../utils/createStore'
 import { createAddTodo } from '../actions/todoActions'
+import { ADD_TODO } from '../constants/actions'
 
 export const reducer = (prevState = createInitialState(), action) => {
     switch (action.type) {
-        case 'ADD_TODO':
+        case ADD_TODO:
             const nextState = {
                 todoList: [
                     ...prevState.todoList,
