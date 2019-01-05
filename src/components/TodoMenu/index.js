@@ -1,1 +1,1 @@
-export {default as TodoMenu} from './TodoMenu'
+export { default as TodoMenu } from './TodoMenu'

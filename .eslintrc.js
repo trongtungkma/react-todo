@@ -2,9 +2,11 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
-    "extends": "eslint:recommended",
+    "extends": "airbnb",
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -13,7 +15,10 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "import",
+        "jest",
+        "jsx-a11y",
     ],
     "rules": {
         "indent": [
@@ -31,6 +36,22 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "react/jsx-filename-extension": [
+            "error",
+            {
+              "extensions": [".js", ".jsx"]
+            }
+        ],
+        "react/jsx-indent": [
+            "error", 4
+        ],
+        "react/jsx-indent-props": [
+            "error", 4
+        ],
+        "indent": [
+            "error", 4
+        ],
+        "import/prefer-default-export": "off",
     }
 };

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
 
 import TodoFormMessage from './TodoFormMessage'
 
 class TodoForm extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
             taskName: '',
             taskAddSuccess: false,
@@ -13,30 +14,31 @@ class TodoForm extends Component {
         }
     }
 
-    handleInput = e => {
+    handleInput = (e) => {
         e.preventDefault()
-        const taskName = this.state.taskName
+        const { taskName } = this.state
+        const { addTodo } = this.props
 
         if (taskName !== null && taskName.length > 0) {
-            this.props.addTodo(this.state.taskName)
-            this.setState(state => ({
+            addTodo(taskName)
+            this.setState({
                 taskName: '',
                 taskAddSuccess: true,
-                taskAddError: false
-            }))
+                taskAddError: false,
+            })
         } else {
             // in case user submit nothing
-            this.setState(state => ({
+            this.setState({
                 taskAddError: true,
-                taskAddSuccess: false
-            }))
+                taskAddSuccess: false,
+            })
         }
     }
 
     handleOnChange = (e, { name, value }) => {
-        this.setState(state => ({
-            [name]: value
-        }))
+        this.setState({
+            [name]: value,
+        })
     }
 
     render() {
@@ -46,7 +48,7 @@ class TodoForm extends Component {
             <>
                 <Form success={taskAddSuccess} error={taskAddError} onSubmit={this.handleInput}>
                     <Form.Input
-                        name='taskName'
+                        name="taskName"
                         placeholder="What you want to do today?"
                         onChange={this.handleOnChange}
                         value={taskName}
@@ -55,11 +57,16 @@ class TodoForm extends Component {
                     <Form.Button
                         primary
                         type="submit"
-                        content="Add Task" />
+                        content="Add Task"
+                    />
                 </Form>
             </>
         )
     }
+}
+
+TodoForm.propTypes = {
+    addTodo: PropTypes.func.isRequired,
 }
 
 export default TodoForm
