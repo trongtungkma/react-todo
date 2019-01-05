@@ -1,18 +1,24 @@
 import React, { Component } from 'react'
+import { Form } from 'semantic-ui-react'
 import styles from './TodoForm.module.css'
 
 class TodoForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            taskName: ''
+        }
+    }
 
     handleInput = e => {
         e.preventDefault()
-        const taskName = this.refs.taskInput.value;
-        
-        // dispatch an action to my redux
-        this.props.addTodo(taskName)
+        this.props.addTodo(this.state.taskName)
+    }
 
-        // reset and focus again on input form
-        this.refs.taskInput.value = ''
-        this.refs.taskInput.focus()
+    handleOnChange = (e, { name, value }) => {
+        this.setState(state => ({
+            [name]: value
+        }))
     }
 
     render() {
@@ -20,18 +26,17 @@ class TodoForm extends Component {
         return (
             <div>
                 <div>
-                    <form onSubmit={this.handleInput}>
-                        <input
-                            className={styles.formInput}
+                    <Form onSubmit={this.handleInput}>
+                        <Form.Input
+                            name='taskName'
+                            onChange={this.handleOnChange}
                             placeholder="Task"
                             ref="taskInput"
                         />
-                        <button
-                            className={styles.formButton}
-                            type="submit">
-                            Add Task
-                        </button>
-                    </form>
+                        <Form.Button
+                            type="submit"
+                            content="Add Task" />
+                    </Form>
                 </div>
             </div>
         )
