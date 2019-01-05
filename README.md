@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-It's a simple ToDo app, used for a React Tutorial in this link:
+It's NOT a simple ToDo app, used for a React Tutorial in this link:
 
 https://medium.com/andy-le
 
