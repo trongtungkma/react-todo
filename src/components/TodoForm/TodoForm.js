@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Form } from 'semantic-ui-react'
-import styles from './TodoForm.module.css'
 
 class TodoForm extends Component {
     constructor(props) {
@@ -13,6 +12,9 @@ class TodoForm extends Component {
     handleInput = e => {
         e.preventDefault()
         this.props.addTodo(this.state.taskName)
+        this.setState(state => ({
+            taskName: ''
+        }))
     }
 
     handleOnChange = (e, { name, value }) => {
@@ -22,6 +24,7 @@ class TodoForm extends Component {
     }
 
     render() {
+        const { taskName } = this.state
 
         return (
             <div>
@@ -29,9 +32,9 @@ class TodoForm extends Component {
                     <Form onSubmit={this.handleInput}>
                         <Form.Input
                             name='taskName'
+                            placeholder="What you want to do today?"
                             onChange={this.handleOnChange}
-                            placeholder="Task"
-                            ref="taskInput"
+                            value={taskName}
                         />
                         <Form.Button
                             type="submit"
