@@ -27,21 +27,20 @@ class TodoForm extends Component {
         const { taskName } = this.state
 
         return (
-            <div>
-                <div>
-                    <Form onSubmit={this.handleInput}>
-                        <Form.Input
-                            name='taskName'
-                            placeholder="What you want to do today?"
-                            onChange={this.handleOnChange}
-                            value={taskName}
-                        />
-                        <Form.Button
-                            type="submit"
-                            content="Add Task" />
-                    </Form>
-                </div>
-            </div>
+            <>
+                <Form onSubmit={this.handleInput}>
+                    <Form.Input
+                        name='taskName'
+                        placeholder="What you want to do today?"
+                        onChange={this.handleOnChange}
+                        value={taskName}
+                    />
+                    <Form.Button
+                        primary
+                        type="submit"
+                        content="Add Task" />
+                </Form>
+            </>
         )
     }
 }

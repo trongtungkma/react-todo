@@ -1,18 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {List} from 'semantic-ui-react'
 
 import {TodoItem} from '../TodoItem'
 import styles from './TodoList.module.css'
 
 const TodoList = ({ tasks }) => {
   return (
-      <ul className={styles.tasksList}>
+      <List className={styles.tasksList}>
         {
           tasks.map(({key, text}) =>
               <TodoItem key={key} text={text}/>
           )
         }
-      </ul>
+      </List>
   )
 }
 
