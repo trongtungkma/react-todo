@@ -9,10 +9,10 @@ class App extends Component {
   render() {
     const { addTodo } = this.props
     return (
-        <div>
+        <>
           <TodoForm addTodo={addTodo} />
           <TodoList tasks={this.props.tasks} />
-        </div>
+        </>
     )
   }
 }
