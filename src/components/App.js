@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { TodoForm } from './components/TodoForm'
-import { TodoList } from './components/TodoList'
-import { createAddTodo } from './actions/todoActions'
+import { TodoForm } from './TodoForm'
+import { TodoList } from './TodoList'
+import { createAddTodo } from '../actions/todoActions'
 
 class App extends Component {
   render() {

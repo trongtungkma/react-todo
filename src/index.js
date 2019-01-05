@@ -6,7 +6,7 @@ import { Provider } from 'react-redux'
 import { todoReducer } from './reducers/todoReducer';
 import { createInitialState } from './utils/createInitialState'
 
-import App from './App'
+import App from './components/App'
 import './index.css'
 
 const store = createStore(todoReducer, createInitialState())
