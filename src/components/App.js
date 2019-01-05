@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Segment } from 'semantic-ui-react'
@@ -9,19 +9,17 @@ import { TodoMenu } from './TodoMenu'
 
 import { createAddTodo } from '../actions/todoActions'
 
-class App extends Component {
-    render() {
-        const { addTodo, tasks } = this.props
-        return (
-            <>
-                <TodoMenu />
-                <Segment>
-                    <TodoForm addTodo={addTodo} />
-                    <TodoList tasks={tasks} />
-                </Segment>
-            </>
-        )
-    }
+const App = (props) => {
+    const { addTodo, tasks } = props
+    return (
+        <>
+            <TodoMenu />
+            <Segment>
+                <TodoForm addTodo={addTodo} />
+                <TodoList tasks={tasks} />
+            </Segment>
+        </>
+    )
 }
 
 App.propTypes = {
