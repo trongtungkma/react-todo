@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Segment } from 'semantic-ui-react'
+import { Segment, Container } from 'semantic-ui-react'
 
 import { TodoForm } from './TodoForm'
 import { TodoList } from './TodoList'
@@ -12,13 +12,13 @@ import { createAddTodo } from '../actions/todoActions'
 const App = (props) => {
     const { addTodo, tasks } = props
     return (
-        <>
+        <Container>
             <TodoMenu />
             <Segment>
                 <TodoForm addTodo={addTodo} />
                 <TodoList tasks={tasks} />
             </Segment>
-        </>
+        </Container>
     )
 }
 
