@@ -1,15 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { List } from 'semantic-ui-react'
-
-import styles from './TodoItem.module.css'
+import {
+    List,
+    Segment,
+    Checkbox,
+    Input,
+    Button,
+} from 'semantic-ui-react'
 
 const TodoItem = ({ text }) => (
-    <div className={styles.taskItem}>
+    <Segment>
         <List.Item>
-            {text}
+            <Checkbox
+                style={{
+                    marginRight: '1em',
+                }}
+            />
+            <Input
+                value={text}
+            />
+            <Button
+                icon="x"
+                circular
+                style={{
+                    marginLeft: '1em',
+                }}
+            />
         </List.Item>
-    </div>
+    </Segment>
 )
 
 TodoItem.propTypes = {
