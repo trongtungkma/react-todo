@@ -1,9 +1,8 @@
 .tasksList {
     color: red;
-    width: 250px;
     padding: 0;
     list-style: none;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     flex-direction: column-reverse;
 }
