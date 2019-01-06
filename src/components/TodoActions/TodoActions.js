@@ -9,11 +9,10 @@ import {
 
 import { NO_TASK } from '../../constants/messages'
 
-const TodoActions = ({ tasks = [] }) => {
-    if (tasks.length > 0) {
-        return <Button content="Complete" />
-    }
-    return (
+const TodoActions = ({ tasks = [] }) => (
+    tasks.length > 0 ? (
+        <Button content="Complete" />
+    ) : (
         <Label>
             <Icon
                 name="paper plane outline"
@@ -22,7 +21,7 @@ const TodoActions = ({ tasks = [] }) => {
             {NO_TASK}
         </Label>
     )
-}
+)
 
 TodoActions.propTypes = {
     tasks: PropTypes.arrayOf(
