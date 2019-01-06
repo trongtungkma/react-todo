@@ -1,13 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { Button } from 'semantic-ui-react'
+import {
+    Button,
+    Label,
+    Icon,
+} from 'semantic-ui-react'
+
+import { NO_TASK } from '../../constants/messages'
 
 const TodoActions = ({ tasks = [] }) => {
     if (tasks.length > 0) {
         return <Button content="Complete" />
     }
-    return (<div>You have no task today</div>)
+    return (
+        <Label>
+            <Icon
+                name="paper plane outline"
+            />
+            {' '}
+            {NO_TASK}
+        </Label>
+    )
 }
 
 TodoActions.propTypes = {
