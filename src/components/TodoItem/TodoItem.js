@@ -3,20 +3,29 @@ import PropTypes from 'prop-types'
 import {
     Segment,
     Checkbox,
-    Input,
     Button,
 } from 'semantic-ui-react'
 
 const TodoItem = ({ text }) => (
-    <Segment>
+    <Segment
+        style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+        }}
+    >
         <Checkbox
             style={{
                 marginRight: '1em',
             }}
         />
-        <Input
-            value={text}
-        />
+        <span
+            style={{
+                flexGrow: 1,
+            }}
+        >
+            {text}
+        </span>
         <Button
             icon="x"
             circular
