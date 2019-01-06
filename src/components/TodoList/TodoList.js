@@ -6,7 +6,11 @@ import { TodoItem } from '../TodoItem'
 import { TodoActions } from '../TodoActions'
 
 const TodoList = ({ tasks }) => (
-    <Segment>
+    <Segment
+        style={{
+            borderStyle: 'hidden',
+        }}
+    >
         {
             tasks.map(({ key, text }) => <TodoItem key={key} text={text} />)
         }
