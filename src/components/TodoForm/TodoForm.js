@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form } from 'semantic-ui-react'
+import { Form, Segment } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 import TodoFormMessage from './TodoFormMessage'
@@ -45,7 +45,7 @@ class TodoForm extends Component {
         const { taskName, taskAddSuccess, taskAddError } = this.state
 
         return (
-            <>
+            <Segment>
                 <Form success={taskAddSuccess} error={taskAddError} onSubmit={this.handleInput}>
                     <Form.Input
                         name="taskName"
@@ -60,7 +60,7 @@ class TodoForm extends Component {
                         content="Add Task"
                     />
                 </Form>
-            </>
+            </Segment>
         )
     }
 }
