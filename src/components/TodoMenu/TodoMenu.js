@@ -1,11 +1,16 @@
 import React from 'react'
-import { Menu, Input, Label } from 'semantic-ui-react'
+import PropTypes from 'prop-types'
+import {
+    Menu,
+    Input,
+    Label,
+} from 'semantic-ui-react'
 
-const TodoMenu = () => (
+const TodoMenu = ({ tasks = [] }) => (
     <Menu pointing>
         <Menu.Item name="home" active>
             Home
-            <Label color="teal">0</Label>
+            <Label color="teal">{tasks.length}</Label>
         </Menu.Item>
         <Menu.Item name="archive">
             Archive
@@ -22,5 +27,15 @@ const TodoMenu = () => (
         </Menu.Menu>
     </Menu>
 )
+
+TodoMenu.propTypes = {
+    tasks: PropTypes.arrayOf(
+        PropTypes.shape({
+            key: PropTypes.number.isRequired,
+            text: PropTypes.string.isRequired,
+        }),
+    ).isRequired,
+}
+
 
 export default TodoMenu

@@ -11,7 +11,7 @@ import { createAddTodo } from '../actions/todoActions'
 
 const App = ({ addTodo, tasks = [] }) => (
     <Container>
-        <TodoMenu />
+        <TodoMenu tasks={tasks} />
         <TodoForm addTodo={addTodo} />
         <TodoList tasks={tasks} />
     </Container>
