@@ -11,9 +11,9 @@ export const todoReducer = (prevState = createInitialState(), action) => {
             ],
         }
     case DEL_TODO:
-        console.log(JSON.stringify(prevState))
-        console.log(JSON.stringify(action))
-        return prevState
+        return {
+            todoList: prevState.todoList.filter(item => (item.id !== action.payload.id)),
+        }
     default:
         return prevState
     }

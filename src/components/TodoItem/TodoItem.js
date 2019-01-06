@@ -9,7 +9,7 @@ import {
 
 import { createDelTodo } from '../../actions/todoActions'
 
-const TodoItem = ({ id, text }) => (
+const TodoItem = ({ id, text, delTodo }) => (
     <Segment
         style={{
             display: 'flex',
@@ -35,6 +35,7 @@ const TodoItem = ({ id, text }) => (
             style={{
                 marginLeft: '1em',
             }}
+            onClick={() => delTodo(id)}
         />
     </Segment>
 )
@@ -43,11 +44,11 @@ const TodoItem = ({ id, text }) => (
 TodoItem.propTypes = {
     text: PropTypes.string.isRequired,
     id: PropTypes.number.isRequired,
-    // delTodo: PropTypes.func.isRequired,
+    delTodo: PropTypes.func.isRequired,
 }
 
-// const mapDispatchToProps = dispatch => ({
-//     delTodo: id => dispatch(createDelTodo(id)),
-// })
+const mapDispatchToProps = dispatch => ({
+    delTodo: id => dispatch(createDelTodo(id)),
+})
 
-export default connect()(TodoItem)
+export default connect(null, mapDispatchToProps)(TodoItem)
