@@ -8,10 +8,11 @@ import {
 } from 'semantic-ui-react'
 
 import { NO_TASK } from '../../constants/messages'
+import { BUTTON_COMPLETE } from '../../constants/content'
 
 const TodoActions = ({ tasks = [] }) => (
     tasks.length > 0 ? (
-        <Button content="Complete" />
+        <Button content={BUTTON_COMPLETE} />
     ) : (
         <Label>
             <Icon

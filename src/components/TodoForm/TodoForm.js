@@ -3,6 +3,7 @@ import { Form, Segment } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 import TodoFormMessage from './TodoFormMessage'
+import { BUTTON_ADD_TASK, ADD_TASK_PLACEHOLDER } from '../../constants/content'
 
 class TodoForm extends Component {
     constructor(props) {
@@ -49,7 +50,7 @@ class TodoForm extends Component {
                 <Form success={taskAddSuccess} error={taskAddError} onSubmit={this.handleInput}>
                     <Form.Input
                         name="taskName"
-                        placeholder="Call to Marry? #friend #meetup"
+                        placeholder={ADD_TASK_PLACEHOLDER}
                         onChange={this.handleOnChange}
                         value={taskName}
                     />
@@ -57,7 +58,7 @@ class TodoForm extends Component {
                     <Form.Button
                         primary
                         type="submit"
-                        content="Add Task"
+                        content={BUTTON_ADD_TASK}
                     />
                 </Form>
             </Segment>
