@@ -13,11 +13,11 @@ import {
     SEARCH_TASK_PLACEHOLDER,
 } from '../../constants/content'
 
-const TodoMenu = ({ tasks = [] }) => (
+const TodoMenu = ({ tasksNumber = 0 }) => (
     <Menu pointing>
         <Menu.Item name="home" active>
             {MENU_HOME}
-            <Label color="teal">{tasks.length}</Label>
+            <Label color="teal">{tasksNumber}</Label>
         </Menu.Item>
         <Menu.Item name="archive">
             {MENU_ARCHIVE}
@@ -36,12 +36,7 @@ const TodoMenu = ({ tasks = [] }) => (
 )
 
 TodoMenu.propTypes = {
-    tasks: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            text: PropTypes.string.isRequired,
-        }),
-    ).isRequired,
+    tasksNumber: PropTypes.number.isRequired,
 }
 
 
