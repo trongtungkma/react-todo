@@ -14,7 +14,7 @@ const App = (props) => {
     return (
         <Container>
             <TodoMenu />
-            <TodoForm addTodo={addTodo} />
+            <TodoForm addTodo={addTodo} />         
             <TodoList tasks={tasks} />
         </Container>
     )

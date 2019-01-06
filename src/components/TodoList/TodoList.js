@@ -1,20 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Segment, Button } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 
 import { TodoItem } from '../TodoItem'
+import { TodoActions } from '../TodoActions'
 
 const TodoList = ({ tasks }) => (
-  <>
-      <Segment>
-          {
-              tasks.map(({ key, text }) => <TodoItem key={key} text={text} />)
-          }
-          <Button
-              content="Complete"
-          />
-      </Segment>
-  </>
+    <Segment>
+        {
+            tasks.map(({ key, text }) => <TodoItem key={key} text={text} />)
+        }
+        <TodoActions tasks={tasks} />
+    </Segment>
 )
 
 TodoList.propTypes = {
