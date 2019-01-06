@@ -1,7 +1,7 @@
-// import { createInitialState } from '../utils/createInitialState'
+import { initialState } from '../utils/initialState'
 import { ADD_TODO, DEL_TODO } from '../constants/actions'
 
-export const todoReducer = (prevState = [], action) => {
+export const todoReducer = (prevState = initialState.todoList, action) => {
     switch (action.type) {
     case ADD_TODO:
         return ([
