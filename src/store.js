@@ -1,7 +1,9 @@
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import createSagaMiddleware from 'redux-saga'
 import _ from 'lodash'
 
+import { helloSaga } from './sagas'
 import rootReducer from './reducers'
 import { initialState } from './utils/initialState'
 
@@ -18,14 +20,19 @@ function logger({ getState }) {
     }
 }
 
+const sagaMiddleware = createSagaMiddleware()
+
 const composeEnhancers = composeWithDevTools({
     // Specify here name, actionsBlacklist, actionsCreators and other options
     name: 'Todo Store',
 })
 
 const store = createStore(rootReducer, initialState, composeEnhancers(
-    applyMiddleware(logger),
+    applyMiddleware(logger, sagaMiddleware),
     // other store enhancers if any
 ))
+
+sagaMiddleware.run(helloSaga)
+
 
 export default store
