@@ -9,16 +9,13 @@ import { TodoMenu } from './TodoMenu'
 
 import { createAddTodo } from '../actions/todoActions'
 
-const App = (props) => {
-    const { addTodo, tasks } = props
-    return (
-        <Container>
-            <TodoMenu />
-            <TodoForm addTodo={addTodo} />
-            <TodoList tasks={tasks} />
-        </Container>
-    )
-}
+const App = ({ addTodo, tasks = [] }) => (
+    <Container>
+        <TodoMenu />
+        <TodoForm addTodo={addTodo} />
+        <TodoList tasks={tasks} />
+    </Container>
+)
 
 App.propTypes = {
     addTodo: PropTypes.func.isRequired,

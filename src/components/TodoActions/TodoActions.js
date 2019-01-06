@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 import { Button } from 'semantic-ui-react'
 
-const TodoActions = ({ tasks }) => {
-    if (tasks && tasks.length > 0) {
+const TodoActions = ({ tasks = [] }) => {
+    if (tasks.length > 0) {
         return <Button content="Complete" />
     }
     return (<div>You have no task today</div>)
