@@ -49,7 +49,7 @@ class TodoForm extends Component {
                 <Form success={taskAddSuccess} error={taskAddError} onSubmit={this.handleInput}>
                     <Form.Input
                         name="taskName"
-                        placeholder="What you want to do today?"
+                        placeholder="Call to Marry? #friend #meetup"
                         onChange={this.handleOnChange}
                         value={taskName}
                     />
