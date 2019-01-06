@@ -1,11 +1,23 @@
-import { ADD_TODO } from '../constants/actions'
+import {
+    ADD_TODO,
+    DEL_TODO,
+} from '../constants/actions'
 
 export const createAddTodo = text => (
     {
         type: ADD_TODO,
         payload: {
-            key: Date.now(),
+            id: Date.now(),
             text,
+        },
+    }
+)
+
+export const createDelTodo = id => (
+    {
+        type: DEL_TODO,
+        payload: {
+            id,
         },
     }
 )

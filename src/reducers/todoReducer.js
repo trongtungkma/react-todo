@@ -1,5 +1,5 @@
 import { createInitialState } from '../utils/createInitialState'
-import { ADD_TODO } from '../constants/actions'
+import { ADD_TODO, DEL_TODO } from '../constants/actions'
 
 export const todoReducer = (prevState = createInitialState(), action) => {
     switch (action.type) {
@@ -10,6 +10,10 @@ export const todoReducer = (prevState = createInitialState(), action) => {
                 action.payload,
             ],
         }
+    case DEL_TODO:
+        console.log(JSON.stringify(prevState))
+        console.log(JSON.stringify(action))
+        return prevState
     default:
         return prevState
     }

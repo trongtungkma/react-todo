@@ -27,7 +27,7 @@ const TodoActions = ({ tasks = [] }) => (
 TodoActions.propTypes = {
     tasks: PropTypes.arrayOf(
         PropTypes.shape({
-            key: PropTypes.number.isRequired,
+            id: PropTypes.number.isRequired,
             text: PropTypes.string.isRequired,
         }),
     ).isRequired,

@@ -21,7 +21,7 @@ App.propTypes = {
     addTodo: PropTypes.func.isRequired,
     tasks: PropTypes.arrayOf(
         PropTypes.shape({
-            key: PropTypes.number.isRequired,
+            id: PropTypes.number.isRequired,
             text: PropTypes.string.isRequired,
         }),
     ).isRequired,

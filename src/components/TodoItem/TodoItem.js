@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import {
     Segment,
     Checkbox,
     Button,
 } from 'semantic-ui-react'
 
-const TodoItem = ({ text }) => (
+import { createDelTodo } from '../../actions/todoActions'
+
+const TodoItem = ({ id, text }) => (
     <Segment
         style={{
             display: 'flex',
@@ -36,8 +39,15 @@ const TodoItem = ({ text }) => (
     </Segment>
 )
 
+
 TodoItem.propTypes = {
     text: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    // delTodo: PropTypes.func.isRequired,
 }
 
-export default TodoItem
+// const mapDispatchToProps = dispatch => ({
+//     delTodo: id => dispatch(createDelTodo(id)),
+// })
+
+export default connect()(TodoItem)

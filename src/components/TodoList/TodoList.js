@@ -12,7 +12,7 @@ const TodoList = ({ tasks }) => (
         }}
     >
         {
-            tasks.map(({ key, text }) => <TodoItem key={key} text={text} />)
+            tasks.map(({ id, text }) => <TodoItem key={id} id={id} text={text} />)
         }
         <TodoActions tasks={tasks} />
     </Segment>
@@ -21,7 +21,7 @@ const TodoList = ({ tasks }) => (
 TodoList.propTypes = {
     tasks: PropTypes.arrayOf(
         PropTypes.shape({
-            key: PropTypes.number.isRequired,
+            id: PropTypes.number.isRequired,
             text: PropTypes.string.isRequired,
         }),
     ).isRequired,
