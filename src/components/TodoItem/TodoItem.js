@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import {
     Segment,
     Checkbox,
-    Button,
     Label,
+    Icon,
 } from 'semantic-ui-react'
 
 import { createDelTodo } from '../../actions/todoActions'
@@ -32,16 +32,21 @@ const TodoItem = ({ id, text, delTodo }) => (
                 textAlign: 'center',
             }}
         >
-            <Label color="blue">business</Label>
-            <Label color="teal">study</Label>
-            <Label color="yellow">family</Label>
+            <Label color="blue">
+                business
+                <Icon name="delete" />
+            </Label>
+            <Label color="teal">
+                study
+                <Icon name="delete" />
+            </Label>
+            <Label color="yellow">
+                family
+                <Icon name="delete" />
+            </Label>
         </span>
-        <Button
-            icon="x"
-            circular
-            style={{
-                marginLeft: '1em',
-            }}
+        <Icon
+            name="delete"
             onClick={() => delTodo(id)}
         />
     </Segment>
