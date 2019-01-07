@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Segment } from 'semantic-ui-react'
 
 import { TodoItem } from '../TodoItem'
-import TodoActions from './TodoActions'
+import TodoMenu from './TodoMenu'
 
 const TodoList = ({ tasks }) => (
     <>
@@ -15,7 +15,7 @@ const TodoList = ({ tasks }) => (
                 borderStyle: 'hidden',
             }}
         >
-            <TodoActions tasks={tasks} />
+            <TodoMenu tasks={tasks} />
         </Segment>
     </>
 )
