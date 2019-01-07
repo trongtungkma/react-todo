@@ -13,6 +13,7 @@ class TodoFormMessage extends Component {
 
     componentWillReceiveProps(nextProps) {
         const { tasksNumber } = this.props
+        // TODO: Case: those values is equal, but user enter empty string
         if (nextProps.tasksNumber > tasksNumber) {
             this.setState({
                 visible: true,

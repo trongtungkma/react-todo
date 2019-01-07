@@ -5,6 +5,7 @@ import {
     Segment,
     Checkbox,
     Button,
+    Label,
 } from 'semantic-ui-react'
 
 import { createDelTodo } from '../../actions/todoActions'
@@ -22,12 +23,18 @@ const TodoItem = ({ id, text, delTodo }) => (
                 marginRight: '1em',
             }}
         />
+        <span>
+            {text}
+        </span>
         <span
             style={{
                 flexGrow: 1,
+                textAlign: 'center',
             }}
         >
-            {text}
+            <Label color="blue">business</Label>
+            <Label color="teal">study</Label>
+            <Label color="yellow">family</Label>
         </span>
         <Button
             icon="x"
