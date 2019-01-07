@@ -14,7 +14,7 @@ import {
     SEARCH_TASK_PLACEHOLDER,
 } from '../../constants/content'
 
-const TodoMenu = ({ tasksNumber = 0 }) => (
+const TodoNav = ({ tasksNumber = 0 }) => (
     <Menu pointing>
         <Menu.Item name="home" active>
             {MENU_HOME}
@@ -39,9 +39,9 @@ const TodoMenu = ({ tasksNumber = 0 }) => (
     </Menu>
 )
 
-TodoMenu.propTypes = {
+TodoNav.propTypes = {
     tasksNumber: PropTypes.number.isRequired,
 }
 
 
-export default TodoMenu
+export default TodoNav
