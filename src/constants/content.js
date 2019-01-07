@@ -1,6 +1,8 @@
 // Define constant for UI component (button, menu)
 export const BUTTON_ADD_TASK = 'Add Task'
 export const BUTTON_COMPLETE = 'Complete'
+export const BUTTON_ARCHIVE = 'Archive'
+export const BUTTON_DELETE = 'Delete'
 export const MENU_HOME = 'Home'
 export const MENU_ARCHIVE = 'Archive'
 export const MENU_INACTIVE = 'Inactive'

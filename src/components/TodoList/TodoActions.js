@@ -8,11 +8,18 @@ import {
 } from 'semantic-ui-react'
 
 import { NO_TASK } from '../../constants/messages'
-import { BUTTON_COMPLETE } from '../../constants/content'
+import {
+    BUTTON_COMPLETE,
+    BUTTON_ARCHIVE,
+} from '../../constants/content'
 
 const TodoActions = ({ tasks = [] }) => (
     tasks.length > 0 ? (
-        <Button content={BUTTON_COMPLETE} />
+        <Button.Group>
+            <Button color="pink" content={BUTTON_COMPLETE} />
+            <Button.Or />
+            <Button content={BUTTON_ARCHIVE} />
+        </Button.Group>
     ) : (
         <Label>
             <Icon
