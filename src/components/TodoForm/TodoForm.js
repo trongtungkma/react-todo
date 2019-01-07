@@ -3,7 +3,6 @@ import {
     Form,
     Segment,
     Label,
-    Icon,
 } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
@@ -61,21 +60,20 @@ class TodoForm extends Component {
                         value={taskName}
                     />
                     <p>
-                        <Label>
+                        <Label as="a" basic>
                             business
-                            <Icon name="delete" />
                         </Label>
-                        <Label>
+                        {' '}
+                        <Label as="a" basic>
                             study
-                            <Icon name="delete" />
                         </Label>
-                        <Label>
+                        {' '}
+                        <Label as="a" basic>
                             family
-                            <Icon name="delete" />
                         </Label>
-                        <Label>
-                            auto
-                            <Icon name="delete" />
+                        {' '}
+                        <Label as="a" color="teal">
+                            selected
                         </Label>
                     </p>
                     <TodoFormMessage tasksNumber={tasksNumber} />
