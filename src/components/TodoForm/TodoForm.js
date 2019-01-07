@@ -55,6 +55,7 @@ class TodoForm extends Component {
             <Segment>
                 <Form success={taskAddSuccess} error={taskAddError} onSubmit={this.handleInput}>
                     <Form.Input
+                        error={taskAddError}
                         name="taskName"
                         placeholder={ADD_TASK_PLACEHOLDER}
                         onChange={this.handleOnChange}
