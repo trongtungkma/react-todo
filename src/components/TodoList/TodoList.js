@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Segment } from 'semantic-ui-react'
 
 import { TodoItem } from '../TodoItem'
-import { TodoActions } from '../TodoActions'
+import TodoActions from './TodoActions'
 
 const TodoList = ({ tasks }) => (
     <Segment
