@@ -44,6 +44,7 @@ class TodoForm extends Component {
 
     render() {
         const { taskName, taskAddSuccess, taskAddError } = this.state
+        const { tasksNumber } = this.props
 
         return (
             <Segment>
@@ -54,7 +55,9 @@ class TodoForm extends Component {
                         onChange={this.handleOnChange}
                         value={taskName}
                     />
-                    <TodoFormMessage />
+                    {
+                        tasksNumber !== 0 ? <TodoFormMessage /> : ''
+                    }
                     <Form.Button
                         primary
                         type="submit"
@@ -68,6 +71,7 @@ class TodoForm extends Component {
 
 TodoForm.propTypes = {
     addTodo: PropTypes.func.isRequired,
+    tasksNumber: PropTypes.number.isRequired,
 }
 
 export default TodoForm
