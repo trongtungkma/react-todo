@@ -13,7 +13,7 @@ class TodoFormMessage extends Component {
 
     componentWillReceiveProps(nextProps) {
         const { tasksNumber } = this.props
-        if (nextProps.tasksNumber !== tasksNumber) {
+        if (nextProps.tasksNumber > tasksNumber) {
             this.setState({
                 visible: true,
             })
