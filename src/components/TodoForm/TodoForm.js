@@ -55,9 +55,7 @@ class TodoForm extends Component {
                         onChange={this.handleOnChange}
                         value={taskName}
                     />
-                    {
-                        tasksNumber !== 0 ? <TodoFormMessage /> : ''
-                    }
+                    <TodoFormMessage tasksNumber={tasksNumber} />
                     <Form.Button
                         primary
                         type="submit"
