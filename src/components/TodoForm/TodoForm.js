@@ -5,7 +5,7 @@ import {
 } from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
-import TodoFormMessage from './TodoFormMessage'
+import TodoMessage from './TodoMessage'
 import TodoTags from './TodoTags'
 
 import { BUTTON_ADD_TASK, ADD_TASK_PLACEHOLDER } from '../../constants/content'
@@ -64,7 +64,7 @@ class TodoForm extends Component {
                         iconPosition="left"
                     />
                     <TodoTags />
-                    <TodoFormMessage tasksNumber={tasksNumber} />
+                    <TodoMessage tasksNumber={tasksNumber} />
                     <Form.Button
                         primary
                         type="submit"

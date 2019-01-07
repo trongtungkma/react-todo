@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Message } from 'semantic-ui-react'
 
-class TodoFormMessage extends Component {
+class TodoMessage extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -53,8 +53,8 @@ class TodoFormMessage extends Component {
     }
 }
 
-TodoFormMessage.propTypes = {
+TodoMessage.propTypes = {
     tasksNumber: PropTypes.number.isRequired,
 }
 
-export default TodoFormMessage
+export default TodoMessage
