@@ -13,7 +13,7 @@ import {
     BUTTON_ARCHIVE,
 } from '../../constants/content'
 
-const TodoActions = ({ tasks = [] }) => (
+const TodoMenu = ({ tasks = [] }) => (
     tasks.length > 0 ? (
         <Button.Group>
             <Button color="pink" content={BUTTON_COMPLETE} />
@@ -31,7 +31,7 @@ const TodoActions = ({ tasks = [] }) => (
     )
 )
 
-TodoActions.propTypes = {
+TodoMenu.propTypes = {
     tasks: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
@@ -40,4 +40,4 @@ TodoActions.propTypes = {
     ).isRequired,
 }
 
-export default TodoActions
+export default TodoMenu
