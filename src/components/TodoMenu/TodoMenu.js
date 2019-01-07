@@ -4,6 +4,7 @@ import {
     Menu,
     Input,
     Label,
+    Responsive,
 } from 'semantic-ui-react'
 
 import {
@@ -27,10 +28,13 @@ const TodoMenu = ({ tasksNumber = 0 }) => (
             {MENU_INACTIVE}
             <Label color="red">20</Label>
         </Menu.Item>
+        {/* TODO: Need a way to display search bar in mobile */}
         <Menu.Menu position="right">
-            <Menu.Item>
-                <Input icon="search" placeholder={SEARCH_TASK_PLACEHOLDER} />
-            </Menu.Item>
+            <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+                <Menu.Item>
+                    <Input icon="search" placeholder={SEARCH_TASK_PLACEHOLDER} />
+                </Menu.Item>
+            </Responsive>
         </Menu.Menu>
     </Menu>
 )
