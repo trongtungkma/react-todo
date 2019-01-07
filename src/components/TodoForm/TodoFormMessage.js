@@ -33,12 +33,14 @@ class TodoFormMessage extends Component {
             return (
                 <>
                     <Message
+                        icon="arrow alternate circle down outline"
                         onDismiss={this.handleDismiss}
                         success
                         header="New Task Added"
-                        content="Keep moving with new task"
+                        content="Move on by select one (or many) tasks in the list"
                     />
                     <Message
+                        icon="arrow alternate circle up outline"
                         onDismiss={this.handleDismiss}
                         error
                         header="Action failed"
