@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
-import { Form, Segment } from 'semantic-ui-react'
+import {
+    Form,
+    Segment,
+    Label,
+    Icon,
+} from 'semantic-ui-react'
 import PropTypes from 'prop-types'
 
 import TodoFormMessage from './TodoFormMessage'
@@ -55,6 +60,24 @@ class TodoForm extends Component {
                         onChange={this.handleOnChange}
                         value={taskName}
                     />
+                    <p>
+                        <Label>
+                            business
+                            <Icon name="delete" />
+                        </Label>
+                        <Label>
+                            study
+                            <Icon name="delete" />
+                        </Label>
+                        <Label>
+                            family
+                            <Icon name="delete" />
+                        </Label>
+                        <Label>
+                            auto
+                            <Icon name="delete" />
+                        </Label>
+                    </p>
                     <TodoFormMessage tasksNumber={tasksNumber} />
                     <Form.Button
                         primary
