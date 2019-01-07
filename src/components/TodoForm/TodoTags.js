@@ -1,23 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Label } from 'semantic-ui-react'
+
+class TodoTag extends Component {
+    state = {
+        selected: true,
+    }
+
+    handleOnClick = () => {
+        this.setState(state => ({
+            selected: !state.selected,
+        }))
+    }
+
+    render() {
+        const { text } = this.props
+        const { selected } = this.state
+        return (
+            <Label
+                as="a"
+                basic={selected}
+                onClick={this.handleOnClick}
+            >
+                {text}
+            </Label>
+        )
+    }
+}
+
+TodoTag.propTypes = {
+    text: PropTypes.string.isRequired,
+}
 
 const TodoTags = () => (
     <p>
-        <Label as="a" basic>
-            business
-        </Label>
+        <TodoTag text="business" />
         {' '}
-        <Label as="a" basic>
-            study
-        </Label>
+        <TodoTag text="study" />
         {' '}
-        <Label as="a" basic>
-            family
-        </Label>
+        <TodoTag text="family" />
         {' '}
-        <Label as="a">
-            selected tag
-        </Label>
+        <TodoTag text="selected tag" />
     </p>
 )
 

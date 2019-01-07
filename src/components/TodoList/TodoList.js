@@ -6,16 +6,18 @@ import { TodoItem } from '../TodoItem'
 import TodoActions from './TodoActions'
 
 const TodoList = ({ tasks }) => (
-    <Segment
-        style={{
-            borderStyle: 'hidden',
-        }}
-    >
+    <>
         {
             tasks.map(({ id, text }) => <TodoItem key={id} id={id} text={text} />)
         }
-        <TodoActions tasks={tasks} />
-    </Segment>
+        <Segment
+            style={{
+                borderStyle: 'hidden',
+            }}
+        >
+            <TodoActions tasks={tasks} />
+        </Segment>
+    </>
 )
 
 TodoList.propTypes = {

@@ -32,15 +32,11 @@ const TodoItem = ({ id, text, delTodo }) => (
                 textAlign: 'center',
             }}
         >
-            <Label color="blue">
-                business
-                <Icon name="delete" />
-            </Label>
-            <Label color="teal">
+            <Label>
                 study
                 <Icon name="delete" />
             </Label>
-            <Label color="yellow">
+            <Label>
                 family
                 <Icon name="delete" />
             </Label>
