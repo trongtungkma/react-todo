@@ -7,6 +7,8 @@ import {
 import PropTypes from 'prop-types'
 
 import TodoFormMessage from './TodoFormMessage'
+import TodoTags from './TodoTags'
+
 import { BUTTON_ADD_TASK, ADD_TASK_PLACEHOLDER } from '../../constants/content'
 
 class TodoForm extends Component {
@@ -59,23 +61,7 @@ class TodoForm extends Component {
                         onChange={this.handleOnChange}
                         value={taskName}
                     />
-                    <p>
-                        <Label as="a" basic>
-                            business
-                        </Label>
-                        {' '}
-                        <Label as="a" basic>
-                            study
-                        </Label>
-                        {' '}
-                        <Label as="a" basic>
-                            family
-                        </Label>
-                        {' '}
-                        <Label as="a" color="teal">
-                            selected
-                        </Label>
-                    </p>
+                    <TodoTags />
                     <TodoFormMessage tasksNumber={tasksNumber} />
                     <Form.Button
                         primary
