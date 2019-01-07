@@ -60,6 +60,8 @@ class TodoForm extends Component {
                         placeholder={ADD_TASK_PLACEHOLDER}
                         onChange={this.handleOnChange}
                         value={taskName}
+                        icon="microphone"
+                        iconPosition="left"
                     />
                     <TodoTags />
                     <TodoFormMessage tasksNumber={tasksNumber} />

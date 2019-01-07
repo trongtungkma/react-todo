@@ -32,7 +32,7 @@ const TodoMenu = ({ tasksNumber = 0 }) => (
         <Menu.Menu position="right">
             <Responsive minWidth={Responsive.onlyTablet.minWidth}>
                 <Menu.Item>
-                    <Input icon="search" placeholder={SEARCH_TASK_PLACEHOLDER} />
+                    <Input icon="search" iconPosition="left" placeholder={SEARCH_TASK_PLACEHOLDER} />
                 </Menu.Item>
             </Responsive>
         </Menu.Menu>
