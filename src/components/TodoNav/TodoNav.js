@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {
     Menu,
-    Input,
+    Search,
     Label,
     Responsive,
 } from 'semantic-ui-react'
@@ -32,7 +32,7 @@ const TodoNav = ({ tasksNumber = 0 }) => (
         <Menu.Menu position="right">
             <Responsive minWidth={Responsive.onlyTablet.minWidth}>
                 <Menu.Item>
-                    <Input icon="search" iconPosition="left" placeholder={SEARCH_TASK_PLACEHOLDER} />
+                    <Search icon="search" iconPosition="left" placeholder={SEARCH_TASK_PLACEHOLDER} />
                 </Menu.Item>
             </Responsive>
         </Menu.Menu>
