@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+
 import { Container } from 'semantic-ui-react'
 
-import { TodoForm } from './TodoForm'
-import { TodoList } from './TodoList'
-import { TodoNav } from './TodoNav'
+import { TodoForm } from '../components/TodoForm'
+import { TodoList } from '../components/TodoList'
+import { TodoNav } from '../components/TodoNav'
 
 import { createAddTodo } from '../actions/todoActions'
 
