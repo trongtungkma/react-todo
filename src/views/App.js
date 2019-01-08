@@ -4,8 +4,7 @@ import { connect } from 'react-redux'
 
 import { Container } from 'semantic-ui-react'
 
-import { TodoForm } from '../components/TodoForm'
-import { TodoList } from '../components/TodoList'
+import { Home } from './Home'
 import { TodoNav } from '../components/TodoNav'
 
 import { createAddTodo } from '../actions/todoActions'
@@ -13,8 +12,7 @@ import { createAddTodo } from '../actions/todoActions'
 const App = ({ addTodo, tasks = [] }) => (
     <Container>
         <TodoNav tasksNumber={tasks.length} />
-        <TodoForm addTodo={addTodo} tasksNumber={tasks.length} />
-        <TodoList tasks={tasks} />
+        <Home addTodo={addTodo} tasks={tasks} />
     </Container>
 )
 
