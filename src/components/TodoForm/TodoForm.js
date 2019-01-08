@@ -63,7 +63,7 @@ class TodoForm extends Component {
                         icon="microphone"
                         iconPosition="left"
                     />
-                    <TodoTags />
+                    <TodoTags taskName={taskName} />
                     <TodoMessage tasksNumber={tasksNumber} />
                     <Form.Button
                         primary

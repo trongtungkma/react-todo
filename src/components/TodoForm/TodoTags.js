@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Label } from 'semantic-ui-react'
+import Loader from 'react-dots-loader'
+import 'react-dots-loader/index.css'
 
 class TodoTag extends Component {
     state = {
@@ -32,16 +34,23 @@ TodoTag.propTypes = {
     text: PropTypes.string.isRequired,
 }
 
-const TodoTags = () => (
-    <p>
-        <TodoTag text="business" />
-        {' '}
-        <TodoTag text="study" />
-        {' '}
-        <TodoTag text="family" />
-        {' '}
-        <TodoTag text="selected tag" />
-    </p>
+const TodoTags = ({ taskName }) => (
+    taskName.length < 10
+        ? <></>
+        : (
+            <div style={{ paddingBottom: '1rem' }}>
+                <TodoTag text="business" />
+                <TodoTag text="study" />
+                <TodoTag text="family" />
+                <Label as="a" basic>
+                    <Loader size={5} distance={10} color="purple" />
+                </Label>
+            </div>
+        )
 )
+
+TodoTags.propTypes = {
+    taskName: PropTypes.string.isRequired,
+}
 
 export default TodoTags
