@@ -43,7 +43,7 @@ const TodoTags = ({ taskName }) => (
                 <TodoTag text="study" />
                 <TodoTag text="family" />
                 <Label as="a" basic>
-                    <Loader size={5} distance={10} color="purple" />
+                    <Loader size={5} />
                 </Label>
             </div>
         )
