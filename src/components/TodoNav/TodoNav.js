@@ -32,7 +32,7 @@ const TodoNav = ({ tasksNumber = 0 }) => (
         <Menu.Menu position="right">
             <Responsive minWidth={Responsive.onlyTablet.minWidth}>
                 <Menu.Item>
-                    <Search icon="search" iconPosition="left" placeholder={SEARCH_TASK_PLACEHOLDER} />
+                    <Search icon="search" placeholder={SEARCH_TASK_PLACEHOLDER} />
                 </Menu.Item>
             </Responsive>
         </Menu.Menu>
