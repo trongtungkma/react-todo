@@ -1,6 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Based on the enhancement branch, we are going to write a simple state manegement like Redux. Finally, we will switch to Redux to use utilize Redux features.
+It's NOT a simple ToDo app, used for a React Tutorial in this link:
+
+https://medium.com/andy-le
 
 ## Available Scripts
 
